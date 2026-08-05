@@ -18,7 +18,7 @@
 
             <input type="password" placeholder="Enter Password" required>
 
-            <button type="submit">Login</button>
+            <button type="button" onclick="loginUser()">Login</button>
             
 
         </form>
@@ -32,6 +32,14 @@
         </p>
 
     </div>
+    <script>
+function loginUser() {
+    alert("Registered Successfully!");
+
+    
+    window.location.href = "dashboard.html";
+}
+</script>
 
 </body>
 </html>
