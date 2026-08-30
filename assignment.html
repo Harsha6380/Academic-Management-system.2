@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignments - Academic Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .assignments-container {
+            width: 90%;
+            max-width: 1150px;
+            margin: 40px auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 25px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-title h1 {
+            color: #1e3a5f;
+            margin-bottom: 8px;
+        }
+
+        .page-title p {
+            color: #64748b;
+        }
+
+        /* COURSE BANNER */
+
+        .course-banner {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .course-banner h2 {
+            color: #2563eb;
+            margin-top: 0;
+        }
+
+        .course-banner p {
+            color: #64748b;
+        }
+
+        /* ASSIGNMENT CARDS */
+
+        .assignment-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .assignment-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .assignment-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .assignment-top h2 {
+            color: #1e3a5f;
+            margin: 0;
+        }
+
+        .status {
+            padding: 7px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+
+        .submitted {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .pending {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .assignment-card p {
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .assignment-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .info {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .info strong {
+            display: block;
+            color: #334155;
+            margin-bottom: 5px;
+        }
+
+        .info span {
+            color: #64748b;
+        }
+
+        /* BUTTONS */
+
+        .assignment-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .view-btn,
+        .submit-btn {
+            padding: 10px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+
+        .view-btn {
+            background: #e0ecff;
+            color: #2563eb;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .submit-btn:hover {
+            background: #1d4ed8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            .assignment-list {
+                grid-template-columns: 1fr;
+            }
+
+            .assignment-top {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .assignment-info {
+                grid-template-columns: 1fr;
+            }
+
+            .assignment-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="assignments-container">
+
+        <!-- BACK BUTTON -->
+
+        <a href="dashboard.html" class="back-btn">
+            ← Back to Dashboard
+        </a>
+
+
+        <!-- TITLE -->
+
+        <div class="page-title">
+
+            <h1>📝 Assignments</h1>
+
+            <p>
+                Assignments and topics for your enrolled course
+            </p>
+
+        </div>
+
+
+        <!-- COURSE -->
+
+        <div class="course-banner">
+
+            <h2>🎓 BCA AI</h2>
+
+            <p>
+                Computer Applications & Artificial Intelligence
+            </p>
+
+            <p>
+                Your assignments are based on the subjects
+                included in your enrolled course.
+            </p>
+
+        </div>
+
+
+        <!-- ASSIGNMENT LIST -->
+
+        <div class="assignment-list">
+
+
+            <!-- ASSIGNMENT 1 -->
+
+            <div class="assignment-card">
+
+                <div class="assignment-top">
+
+                    <h2>Assignment 1</h2>
+
+                    <span class="status submitted">
+                        ✓ Submitted
+                    </span>
+
+                </div>
+
+                <p>
+                    Write a Python program to demonstrate
+                    variables, data types and operators.
+                </p>
+
+                <div class="assignment-info">
+
+                    <div class="info">
+                        <strong>📚 Topic</strong>
+                        <span>Python Basics</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>📅 Due Date</strong>
+                        <span>05 Sep 2026</span>
+                    </div>
+
+                </div>
+
+                <div class="assignment-buttons">
+
+                    <button class="view-btn"
+                        onclick="viewAssignment('Python Basics')">
+                        👀 View
+                    </button>
+
+                    <button class="submit-btn"
+                        onclick="showMessage('Assignment 1')">
+                        ✓ Submitted
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSIGNMENT 2 -->
+
+            <div class="assignment-card">
+
+                <div class="assignment-top">
+
+                    <h2>Assignment 2</h2>
+
+                    <span class="status pending">
+                        ⏳ Pending
+                    </span>
+
+                </div>
+
+                <p>
+                    Explain supervised and unsupervised learning
+                    with suitable examples.
+                </p>
+
+                <div class="assignment-info">
+
+                    <div class="info">
+                        <strong>📚 Topic</strong>
+                        <span>Machine Learning</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>📅 Due Date</strong>
+                        <span>12 Sep 2026</span>
+                    </div>
+
+                </div>
+
+                <div class="assignment-buttons">
+
+                    <button class="view-btn"
+                        onclick="viewAssignment('Machine Learning')">
+                        👀 View
+                    </button>
+
+                    <a href="submit-assignment.html" class="submit-btn">
+    📤 Submit
+</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSIGNMENT 3 -->
+
+            <div class="assignment-card">
+
+                <div class="assignment-top">
+
+                    <h2>Assignment 3</h2>
+
+                    <span class="status pending">
+                        ⏳ Pending
+                    </span>
+
+                </div>
+
+                <p>
+                    Explain the applications of Artificial
+                    Intelligence in real-world situations.
+                </p>
+
+                <div class="assignment-info">
+
+                    <div class="info">
+                        <strong>📚 Topic</strong>
+                        <span>Artificial Intelligence</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>📅 Due Date</strong>
+                        <span>20 Sep 2026</span>
+                    </div>
+
+                </div>
+
+                <div class="assignment-buttons">
+
+                    <button class="view-btn"
+                        onclick="viewAssignment('Artificial Intelligence')">
+                        👀 View
+                    </button>
+
+                    <a href="submit-assignment.html" class="submit-btn">
+    📤 Submit
+</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSIGNMENT 4 -->
+
+            <div class="assignment-card">
+
+                <div class="assignment-top">
+
+                    <h2>Assignment 4</h2>
+
+                    <span class="status pending">
+                        ⏳ Pending
+                    </span>
+
+                </div>
+
+                <p>
+                    Create a simple data analysis project using
+                    Python and explain the results.
+                </p>
+
+                <div class="assignment-info">
+
+                    <div class="info">
+                        <strong>📚 Topic</strong>
+                        <span>Data Science</span>
+                    </div>
+
+                    <div class="info">
+                        <strong>📅 Due Date</strong>
+                        <span>28 Sep 2026</span>
+                    </div>
+
+                </div>
+
+                <div class="assignment-buttons">
+
+                    <button class="view-btn"
+                        onclick="viewAssignment('Data Science')">
+                        👀 View
+                    </button>
+<a href="submit-assignment.html" class="submit-btn">
+    📤 Submit
+</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function viewAssignment(topic) {
+
+            alert(
+                "Assignment Topic: " + topic +
+                "\n\nYou can view the assignment details here."
+            );
+
+        }
+
+
+        function submitAssignment(assignment) {
+
+            alert(
+                assignment +
+                " submission page will open here."
+            );
+
+        }
+
+
+        function showMessage(assignment) {
+
+            alert(
+                assignment +
+                " has already been submitted."
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

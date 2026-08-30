@@ -316,3 +316,146 @@ color:white;
 .enroll-btn:hover{
     background:#005dcc;
 }
+/* MY COURSE SECTION */
+
+.student-course {
+    padding: 40px;
+    margin-left: 250px;
+    background: #f5f8fc;
+    min-height: 100vh;
+}
+
+.student-course h1 {
+    color: #1e3a5f;
+    margin-bottom: 5px;
+}
+
+.course-subtitle {
+    color: #64748b;
+    margin-bottom: 25px;
+}
+
+
+/* COURSE CARD */
+
+.course-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-header h2 {
+    color: #2563eb;
+    margin-bottom: 5px;
+}
+
+.course-header p {
+    color: #64748b;
+}
+
+.course-status {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
+/* COURSE INFORMATION */
+
+.course-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.info-box {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+.info-box h3 {
+    margin: 0 0 8px;
+    color: #334155;
+}
+
+.info-box p {
+    margin: 0;
+    color: #2563eb;
+    font-weight: bold;
+}
+
+
+/* ACTION CARDS */
+
+.dashboard-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.action-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.action-icon {
+    font-size: 45px;
+}
+
+.action-card h2 {
+    color: #1e3a5f;
+}
+
+.action-card p {
+    color: #64748b;
+    line-height: 1.5;
+}
+
+.action-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 11px 20px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.action-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .student-course {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .course-info {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-actions {
+        grid-template-columns: 1fr;
+    }
+}

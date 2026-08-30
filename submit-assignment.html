@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Assignment</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+        }
+
+        .submit-container {
+            width: 90%;
+            max-width: 700px;
+            margin: 40px auto;
+        }
+
+        .back-btn {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .submit-card {
+            background: white;
+            padding: 35px;
+            margin-top: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .submit-card h1 {
+            color: #1e3a5f;
+            margin-top: 0;
+        }
+
+        .course-name {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #334155;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+        }
+
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .submit-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #1d4ed8;
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #dcfce7;
+            color: #15803d;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="submit-container">
+
+        <a href="assignments.html" class="back-btn">
+            ← Back to Assignments
+        </a>
+
+        <div class="submit-card">
+
+            <h1>📤 Submit Assignment</h1>
+
+            <p>
+                Course:
+                <span class="course-name">BCA AI</span>
+            </p>
+
+            <p>
+                Assignment:
+                <strong id="assignmentName">
+                    Assignment 2 - Machine Learning
+                </strong>
+            </p>
+
+
+            <!-- SUBMISSION FORM -->
+
+            <form id="submissionForm">
+
+                <label for="studentName">
+                    Student Name
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label for="answer">
+                    Your Answer
+                </label>
+
+                <textarea
+                    id="answer"
+                    placeholder="Write your assignment answer here..."
+                    required
+                ></textarea>
+
+
+                <label for="file">
+                    Upload Assignment
+                </label>
+
+                <input
+                    type="file"
+                    id="file"
+                    accept=".pdf,.doc,.docx,.txt"
+                >
+
+
+                <button
+                    type="submit"
+                    class="submit-button"
+                >
+                    📤 Submit Assignment
+                </button>
+
+            </form>
+
+
+            <!-- SUCCESS MESSAGE -->
+
+            <div
+                id="successMessage"
+                class="success-message"
+            >
+                ✅ Assignment submitted successfully!
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const form = document.getElementById("submissionForm");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const studentName =
+                document.getElementById("studentName").value;
+
+            const answer =
+                document.getElementById("answer").value;
+
+            const file =
+                document.getElementById("file").files[0];
+
+
+            // Check the form
+
+            if (studentName === "" || answer === "") {
+
+                alert("Please fill all required fields.");
+
+                return;
+
+            }
+
+
+            // Save submission information
+
+            localStorage.setItem(
+                "assignmentStatus",
+                "Submitted"
+            );
+
+            localStorage.setItem(
+                "studentName",
+                studentName
+            );
+
+            localStorage.setItem(
+                "assignmentAnswer",
+                answer
+            );
+
+
+            if (file) {
+
+                localStorage.setItem(
+                    "assignmentFile",
+                    file.name
+                );
+
+            }
+
+
+            // Show success message
+
+            document.getElementById(
+                "successMessage"
+            ).style.display = "block";
+
+
+            // Clear form
+
+            form.reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>
